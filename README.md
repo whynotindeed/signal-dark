@@ -78,8 +78,12 @@ Key variables:
 
 GPL-2.0-or-later — same as Joomla itself.
 
+## What's Next
+
+Signal Dark is the first in a series of Joomla 6 templates from The AI Director. A light counterpart is in the works — same layout, same 36 positions, light background. Follow the repo or check [theaidirector.win](https://theaidirector.win) for updates.
+
 ## Credits
 
-Built by **[The AI Director](https://theaidirector.win)** — tools for building Joomla sites with AI.
+Built by **[The AI Director](https://theaidirector.win)** — Joomla 6 templates and AI-powered development tools.
 
 The entire template — CSS, PHP, JavaScript — was written conversationally using [Claude Code](https://claude.ai/claude-code) in VS Code. Want to build your own Joomla site the same way? Check out the [AI Joomla Starter Kit](https://theaidirector.win/shop).
