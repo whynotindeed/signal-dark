@@ -4,7 +4,6 @@ A dark editorial template for Joomla 5/6. Every component view styled for dark m
 
 **[Live Demo](https://demo.theaidirector.win)** · **[Getting Started](https://demo.theaidirector.win/signal-dark/getting-started)**
 
-![Signal Dark Screenshot](https://theaidirector.win/media/templates/site/signal-dark/img/og-default.jpg)
 
 ## Features
 
