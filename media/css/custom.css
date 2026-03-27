@@ -1,0 +1,20 @@
+/*
+ * custom.css — Signal Dark
+ * ========================
+ * Add your custom CSS here. This file loads after template.css
+ * and has full override priority.
+ *
+ * Your changes in this file survive template updates — template.css
+ * may be overwritten when you update Signal Dark, but custom.css
+ * is never touched.
+ *
+ * Examples:
+ *   Override the primary accent color:
+ *     :root { --violet: #9333ea; }
+ *
+ *   Change the nav background:
+ *     .taid-nav.opaque { background: rgba(0,0,0,.95); }
+ *
+ *   Hide the reading progress bar:
+ *     .taid-progress { display: none; }
+ */

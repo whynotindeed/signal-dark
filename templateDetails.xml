@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="template" client="site" method="upgrade">
+	<name>signal-dark</name>
+	<version>1.2.0</version>
+	<creationDate>2026-02</creationDate>
+	<author>The AI Director</author>
+	<description>Signal Dark — a dark editorial template built entirely by AI — &lt;a href="https://theaidirector.win" target="_blank" rel="noopener"&gt;TheAIDirector.Win&lt;/a&gt;&lt;br&gt;&lt;br&gt;Violet/cyan accent palette. Space Grotesk typography. Reading progress bar. Full magazine layout with &lt;a href="https://theaidirector.win/index.php/signal-dark/modules" target="_blank" rel="noopener"&gt;36 module positions&lt;/a&gt;. Every component view styled for dark mode — articles, categories, contacts, tags, search, news feeds, and Kunena forum.&lt;br&gt;&lt;br&gt;Designed to be edited conversationally in &lt;a href="https://theaidirector.win/coding-tools" target="_blank" rel="noopener"&gt;VS Code with Claude Code&lt;/a&gt; — describe what you want, it reads the template, writes the CSS, and deploys the change. No manual coding required.&lt;br&gt;&lt;br&gt;&lt;a href="https://theaidirector.win/index.php/signal-dark" target="_blank" rel="noopener"&gt;Browse the demo &amp;rarr;&lt;/a&gt;</description>
+
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>fields</folder>
+	</files>
+
+	<media destination="templates/site/signal-dark" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>img</folder>
+	</media>
+
+	<positions>
+		<position>search</position>
+		<position>menu</position>
+		<position>subnav</position>
+		<position>announcement</position>
+		<position>hero</position>
+		<position>after-hero</position>
+		<position>featured</position>
+		<position>top-a</position>
+		<position>top-b</position>
+		<position>ad-banner</position>
+		<position>ad-banner-row</position>
+		<position>breadcrumbs</position>
+		<position>main-top</position>
+		<position>main-bottom</position>
+		<position>content-bottom</position>
+		<position>sidebar-top</position>
+		<position>sidebar-left</position>
+		<position>sidebar-right</position>
+		<position>ad-sidebar</position>
+		<position>ad-article</position>
+		<position>ad-article-row</position>
+		<position>bottom-a</position>
+		<position>bottom-b</position>
+		<position>newsletter</position>
+		<position>shop-intro</position>
+		<position>marketplace</position>
+		<position>ad-footer</position>
+		<position>partner</position>
+		<position>footer-a</position>
+		<position>footer-b</position>
+		<position>footer-c</position>
+		<position>footer</position>
+		<position>footer-logo</position>
+		<position>footer-copy</position>
+		<position>footer-credit</position>
+		<position>debug</position>
+	</positions>
+
+	<config>
+		<fields name="params" addfieldpath="/templates/signal-dark/fields">
+
+			<fieldset name="positions" label="Position Manager">
+				<field
+					name="positionMap"
+					type="positionmap"
+					label="Position Manager"
+					description="Each box is a module position. Click the device icons to toggle visibility: green = visible, red = hidden. The arrows control stacking order on mobile — higher numbers push a position further down when the layout collapses to a single column. Changes take effect when you save."
+					filter="raw"
+				/>
+			</fieldset>
+
+			<fieldset name="basic" label="Template Options">
+
+				<field
+					name="fontService"
+					type="list"
+					label="Font Service"
+					description="Where to load the template fonts from. Google and Bunny serve the same fonts; Bunny is GDPR-friendly (no Google tracking). Adobe requires a Typekit kit ID. Local uses your own files in /media/templates/site/signal-dark/fonts/."
+					default="google"
+				>
+					<option value="google">Google Fonts</option>
+					<option value="bunny">Bunny Fonts (GDPR-friendly)</option>
+					<option value="adobe">Adobe Fonts (Typekit)</option>
+					<option value="local">Local fonts (self-hosted)</option>
+				</field>
+
+				<field
+					name="adobeFontsKitId"
+					type="text"
+					label="Adobe Fonts Kit ID"
+					description="Your Typekit kit ID — the short alphanumeric code from use.typekit.net/KITID.css"
+					default=""
+					filter="string"
+					showon="fontService:adobe"
+				/>
+
+				<field
+					name="logoText"
+					type="text"
+					label="Logo Text"
+					description="The text shown in the top-left corner and footer of the site. Use &lt;span&gt; to wrap the accent word."
+					default="THE &lt;span&gt;AI&lt;/span&gt; DIRECTOR"
+					filter="raw"
+				/>
+
+				<field
+					name="showHero"
+					type="radio"
+					label="Show Hero Section"
+					description="Display the hero banner on the homepage. Turn off to use a module-only homepage layout."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="showHeroTagline"
+					type="radio"
+					label="Show Tagline"
+					description="Display the eyebrow tagline above the hero title."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="siteTagline"
+					type="text"
+					label="Hero Eyebrow / Tagline"
+					default="AI · Prompts · Automation"
+					filter="string"
+					showon="showHero:1[AND]showHeroTagline:1"
+				/>
+
+				<field
+					name="showHeroTitle"
+					type="radio"
+					label="Show Hero Title"
+					description="Display the main hero heading."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="heroTitle"
+					type="text"
+					label="Hero Title"
+					default="Think Clearly About AI."
+					filter="string"
+					showon="showHero:1[AND]showHeroTitle:1"
+				/>
+
+				<field
+					name="showHeroSubtitle"
+					type="radio"
+					label="Show Hero Subtitle"
+					description="Display the descriptive text below the title."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="heroSubtitle"
+					type="textarea"
+					label="Hero Subtitle"
+					rows="3"
+					default="Deep analysis, practical prompts, and working scripts for people who want to actually use AI — not just talk about it."
+					filter="raw"
+					showon="showHero:1[AND]showHeroSubtitle:1"
+				/>
+
+				<field
+					name="showHeroCta"
+					type="radio"
+					label="Show Primary CTA Button"
+					description="Display the primary call-to-action button."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="ctaText"
+					type="text"
+					label="Primary CTA Text"
+					default="Read Articles"
+					filter="string"
+					showon="showHero:1[AND]showHeroCta:1"
+				/>
+
+				<field
+					name="ctaLink"
+					type="text"
+					label="Primary CTA Link"
+					default="#latest"
+					filter="string"
+					showon="showHero:1[AND]showHeroCta:1"
+				/>
+
+				<field
+					name="showHeroSecondaryCta"
+					type="radio"
+					label="Show Secondary CTA Button"
+					description="Display the secondary (ghost) call-to-action button."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="secondaryCtaText"
+					type="text"
+					label="Secondary CTA Text"
+					default="Browse Scripts"
+					filter="string"
+					showon="showHero:1[AND]showHeroSecondaryCta:1"
+				/>
+
+				<field
+					name="secondaryCtaLink"
+					type="text"
+					label="Secondary CTA Link"
+					default="#marketplace"
+					filter="string"
+					showon="showHero:1[AND]showHeroSecondaryCta:1"
+				/>
+
+				<field
+					name="showHeroStats"
+					type="radio"
+					label="Show Hero Stats"
+					description="Display the stats counters (articles, categories, etc.) below the CTA buttons."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					showon="showHero:1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="heroImage"
+					type="media"
+					label="Hero Background Image"
+					description="Optional background image for the hero section. Leave empty for the default gradient."
+					directory="images"
+					showon="showHero:1"
+				/>
+
+				<field
+					name="heroHeight"
+					type="list"
+					label="Hero Height"
+					description="Height of the hero section."
+					default="auto"
+					showon="showHero:1"
+				>
+					<option value="auto">Auto (content-based)</option>
+					<option value="50vh">Half screen (50vh)</option>
+					<option value="75vh">Three-quarter screen (75vh)</option>
+					<option value="100vh">Full screen (100vh)</option>
+				</field>
+
+				<field
+					name="heroLayout"
+					type="list"
+					label="Hero Layout"
+					description="How the hero content and image are arranged."
+					default="overlay"
+					showon="showHero:1"
+				>
+					<option value="overlay">Text overlay on image</option>
+					<option value="side">Image on right, text on left</option>
+					<option value="full">Full-width image with text below</option>
+				</field>
+
+				<field
+					name="heroImageFit"
+					type="list"
+					label="Hero Image Fit"
+					description="How the background image fills the hero area."
+					default="cover"
+					showon="heroImage!:"
+				>
+					<option value="cover">Cover (fill area, crop if needed)</option>
+					<option value="contain">Contain (show full image, may letterbox)</option>
+					<option value="stretch">Stretch (fill exactly, may distort)</option>
+					<option value="auto">Original size</option>
+				</field>
+
+				<field
+					name="heroImagePosition"
+					type="list"
+					label="Hero Image Position"
+					description="Which part of the image to anchor when cropping."
+					default="center"
+					showon="heroImage!:"
+				>
+					<option value="center">Center</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+					<option value="top left">Top Left</option>
+					<option value="top right">Top Right</option>
+					<option value="bottom left">Bottom Left</option>
+					<option value="bottom right">Bottom Right</option>
+				</field>
+
+				<field
+					name="heroOverlayOpacity"
+					type="list"
+					label="Hero Overlay Darkness"
+					description="How dark the overlay is on top of the image. Higher = darker, more readable text."
+					default="70"
+					showon="heroImage!:"
+				>
+					<option value="0">None (no overlay)</option>
+					<option value="30">Light (30%)</option>
+					<option value="50">Medium (50%)</option>
+					<option value="70">Dark (70%)</option>
+					<option value="85">Very dark (85%)</option>
+				</field>
+
+				<field
+					name="stickyHeader"
+					type="radio"
+					label="Sticky Header"
+					description="Keep the main navigation fixed at the top when scrolling."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="stickySubnav"
+					type="radio"
+					label="Sticky Sub-navigation"
+					description="Pin the secondary nav bar below the header when scrolling."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="showNavCta"
+					type="radio"
+					label="Navigation CTA Button"
+					description="Show the call-to-action button (e.g. Downloads) in the top-right corner of the header bar."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="showNavSearch"
+					type="radio"
+					label="Navigation Search Icon"
+					description="Show the search icon in the top-right corner of the header bar. Requires a Search module in the 'search' position."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="showProgressBar"
+					type="radio"
+					label="Reading Progress Bar"
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="blockLinks"
+					type="radio"
+					label="Clickable Article Cards"
+					description="Make entire article cards clickable instead of just the title link. Applies to article list modules on the homepage."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="roundedImages"
+					type="radio"
+					label="Rounded Article Images"
+					description="Apply subtle rounded corners to article images (intro images, full-text images, and inline figures)."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="linkHoverBg"
+					type="radio"
+					label="Link Hover Background"
+					description="Show a subtle background highlight when hovering over links in article lists and sidebar modules."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="showNewsletter"
+					type="radio"
+					label="Show Newsletter Section"
+					description="Display the newsletter signup section on the homepage."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="newsletterTitle"
+					type="text"
+					label="Newsletter Section Title"
+					default="Stay Sharp on AI"
+					filter="string"
+					showon="showNewsletter:1"
+				/>
+
+				<field
+					name="newsletterSubtitle"
+					type="text"
+					label="Newsletter Section Subtitle"
+					default="New articles, prompt packs, and scripts — delivered when they're ready. No filler."
+					filter="string"
+					showon="showNewsletter:1"
+				/>
+
+				<field
+					name="kunenaShowLastPost"
+					type="radio"
+					label="Kunena: Last Post Column"
+					description="Show or hide the Category / Last Post column headers and Last Post data on Kunena forum index pages. Has no effect if Kunena is not installed."
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="kunenaShowPostHeader"
+					type="radio"
+					label="Kunena: Post Topic Header"
+					description="Show or hide the 'Re: Topic Title' line above each reply in Kunena forum threads. Has no effect if Kunena is not installed."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="kunenaLockOnce"
+					type="radio"
+					label="Kunena: Lock Notice Once"
+					description="When enabled, 'The topic has been locked' only appears on the last post instead of every post. Has no effect if Kunena is not installed."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="kunenaTemplateFont"
+					type="radio"
+					label="Kunena: Use Template Font"
+					description="Override Kunena's default Segoe UI with the template body font (Inter). Has no effect if Kunena is not installed."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="jceDarkPreview"
+					type="radio"
+					label="JCE: Dark Preview"
+					description="Style the JCE Preview tab to match the template's dark theme. When off, the preview uses the default Joomla backend styling. Note: TinyMCE's frontend editor does not render properly with dark templates — JCE is strongly recommended. Has no effect if JCE is not installed."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="kunenaPostGlow"
+					type="radio"
+					label="Kunena: Post Hover Glow"
+					description="Show a subtle violet glow when hovering over forum posts. Has no effect if Kunena is not installed."
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

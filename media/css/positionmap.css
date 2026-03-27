@@ -1,0 +1,237 @@
+/* ═══════════════════════════════════════════════════════════════
+   Signal Dark — Visual Position Manager (admin field)
+   Renders inside Joomla's Atum admin template.
+   ═══════════════════════════════════════════════════════════════ */
+
+.taid-pm {
+  --pm-bg:      #0a0a0f;
+  --pm-bg2:     #141420;
+  --pm-bg3:     #1c1c2e;
+  --pm-border:  rgba(255,255,255,.10);
+  --pm-text:    #f0f0ff;
+  --pm-muted:   rgba(240,240,255,.45);
+  --pm-violet:  #7c3aed;
+  --pm-cyan:    #06b6d4;
+  --pm-on:      #10b981;
+  --pm-off:     rgba(244,63,94,.7);
+  --pm-radius:  4px;
+  --pm-gap:     4px;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  max-width: 820px;
+  line-height: 1.4;
+}
+
+/* ── Help text ────────────────────────────────────────────── */
+.taid-pm-help {
+  font-size: 12px;
+  color: var(--pm-muted);
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.taid-pm-help-on  { color: var(--pm-on);  font-weight: 600; }
+.taid-pm-help-off { color: var(--pm-off); font-weight: 600; }
+
+/* ── A4 page blueprint ─────────────────────────────────────── */
+.taid-pm-page {
+  background: var(--pm-bg);
+  border: 2px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pm-gap);
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
+}
+
+/* ── Row ───────────────────────────────────────────────────── */
+.taid-pm-row {
+  position: relative;
+}
+
+.taid-pm-row-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--pm-muted);
+  margin-bottom: 2px;
+  padding-left: 4px;
+  user-select: none;
+}
+
+.taid-pm-cells {
+  display: flex;
+  gap: var(--pm-gap);
+}
+
+/* Full-width rows */
+.taid-pm-row--full .taid-pm-box { flex: 1; }
+
+/* Two-column rows */
+.taid-pm-row--cols-2 .taid-pm-box { flex: 1; }
+
+/* Three-column rows */
+.taid-pm-row--cols-3 .taid-pm-box { flex: 1; }
+
+/* Content area — 3-column grid */
+.taid-pm-row--content-area .taid-pm-cells {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  gap: var(--pm-gap);
+}
+
+.taid-pm-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pm-gap);
+}
+
+.taid-pm-col--center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pm-gap);
+}
+
+.taid-pm-col--side .taid-pm-box {
+  flex: 1;
+}
+
+/* ── Position box ──────────────────────────────────────────── */
+.taid-pm-box {
+  background: var(--pm-bg2);
+  border: 1px solid var(--pm-border);
+  border-radius: var(--pm-radius);
+  padding: 7px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 48px;
+  transition: border-color .15s ease;
+}
+
+.taid-pm-box:hover {
+  border-color: rgba(255,255,255,.2);
+}
+
+/* Component pseudo-position — not interactive */
+.taid-pm-box--component {
+  background: rgba(124,58,237,.08);
+  border-color: rgba(124,58,237,.25);
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  cursor: default;
+}
+
+.taid-pm-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--pm-text);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taid-pm-box--component .taid-pm-name {
+  color: rgba(167,139,250,.7);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ── Device toggles ────────────────────────────────────────── */
+.taid-pm-toggles {
+  display: flex;
+  gap: 3px;
+}
+
+.taid-pm-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  border: 1px solid rgba(244,63,94,.25);
+  border-radius: 3px;
+  background: rgba(244,63,94,.08);
+  color: var(--pm-off);
+  cursor: pointer;
+  transition: all .12s ease;
+  padding: 0;
+  line-height: 1;
+  outline: none;
+}
+
+.taid-pm-toggle:hover {
+  transform: scale(1.08);
+}
+
+.taid-pm-toggle:focus-visible {
+  outline: 1px solid var(--pm-violet);
+  outline-offset: 1px;
+}
+
+.taid-pm-toggle.is-on {
+  background: rgba(16,185,129,.12);
+  border-color: rgba(16,185,129,.35);
+  color: var(--pm-on);
+}
+
+.taid-pm-toggle svg {
+  pointer-events: none;
+}
+
+/* ── Mobile order controls ─────────────────────────────────── */
+.taid-pm-order {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.taid-pm-order-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 16px;
+  border: 1px solid var(--pm-border);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--pm-muted);
+  cursor: pointer;
+  font-size: 7px;
+  padding: 0;
+  line-height: 1;
+  transition: color .12s ease, border-color .12s ease;
+  outline: none;
+}
+
+.taid-pm-order-btn:hover {
+  color: var(--pm-cyan);
+  border-color: rgba(6,182,212,.4);
+}
+
+.taid-pm-order-btn:focus-visible {
+  outline: 1px solid var(--pm-violet);
+  outline-offset: 1px;
+}
+
+.taid-pm-order-val {
+  font-size: 10px;
+  font-family: 'Space Mono', monospace;
+  color: var(--pm-muted);
+  min-width: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.taid-pm-order-val:not([data-order="0"]) {
+  color: var(--pm-cyan);
+  font-weight: 600;
+}

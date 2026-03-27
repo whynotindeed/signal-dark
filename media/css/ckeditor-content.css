@@ -1,0 +1,166 @@
+/*
+ * Signal Dark — CKEditor content area
+ * Loaded via config.contentsCss in /media/kunena/core/js/ckeditor_config.js
+ * Overrides the default white-background contents.css with Signal Dark theme.
+ * Using hex values (no CSS vars — this loads inside a sandboxed iframe).
+ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+body {
+  background-color: #10101a;
+  color: #f0f0ff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 16px 20px;
+  caret-color: #a78bfa;
+}
+
+.cke_editable {
+  font-size: 15px;
+  line-height: 1.75;
+  word-wrap: break-word;
+}
+
+/* ── Links ────────────────────────────────────────────────── */
+a             { color: #a78bfa; text-decoration: underline; }
+a:hover       { color: #67e8f9; }
+
+/* ── Blockquote (quoted reply — Kunena wraps quotes in <blockquote>) ── */
+blockquote {
+  border-style: solid;
+  border-color: #7c3aed;
+  border-width: 0 0 0 3px;
+  margin: 0 0 1em 0;
+  padding: .65rem 1rem;
+  background: rgba(124,58,237,.07);
+  border-radius: 0 .4rem .4rem 0;
+  color: rgba(240,240,255,.82);
+  font-style: normal;
+  font-family: inherit;
+}
+
+/* Quote cite (author: "kate post=8 userid=307") */
+blockquote cite {
+  display: block;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #a78bfa;
+  margin-bottom: .5rem;
+  font-style: normal;
+  opacity: .8;
+}
+
+/* ── Headings ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: #f0f0ff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── Code ─────────────────────────────────────────────────── */
+code {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  background: #181825;
+  color: #10b981;
+  padding: .15em .4em;
+  border-radius: .25rem;
+  font-size: .875em;
+}
+
+pre {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  background: #181825;
+  color: #10b981;
+  padding: 1rem 1.1rem;
+  border-radius: .4rem;
+  border-left: 3px solid rgba(16,185,129,.4);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-size: .875em;
+  line-height: 1.65;
+}
+
+/* ── HR ───────────────────────────────────────────────────── */
+hr { border: 0; border-top: 1px solid rgba(255,255,255,.1); }
+
+/* ── Lists ────────────────────────────────────────────────── */
+ol, ul      { padding: 0 0 0 1.5rem; margin: .5rem 0 1rem; *margin-right: 0; }
+li          { margin-bottom: .25rem; }
+
+/* ── Images ───────────────────────────────────────────────── */
+img.right   { border: 1px solid rgba(255,255,255,.12); float: right; margin-left: 15px; padding: 5px; }
+img.left    { border: 1px solid rgba(255,255,255,.12); float: left;  margin-right: 15px; padding: 5px; }
+a > img     { padding: 1px; margin: 1px; border: none; outline: 1px solid #a78bfa; }
+
+/* ── Marker highlight ─────────────────────────────────────── */
+.marker     { background-color: rgba(245,158,11,.28); color: #f0f0ff; }
+
+/* ── Tables ───────────────────────────────────────────────── */
+.cke_show_borders table.cke_show_border,
+.cke_show_borders table.cke_show_border > tr > td,
+.cke_show_borders table.cke_show_border > tr > th,
+.cke_show_borders table.cke_show_border > tbody > tr > td,
+.cke_show_borders table.cke_show_border > tbody > tr > th { border: rgba(255,255,255,.18) 1px dotted; }
+
+/* ── Figures ──────────────────────────────────────────────── */
+figure {
+  text-align: center;
+  outline: solid 1px rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  padding: 10px;
+  margin: 10px 20px;
+  display: inline-block;
+}
+figure > figcaption { text-align: center; display: block; color: rgba(240,240,255,.5); font-size: .85em; }
+
+/* ── Placeholder text ─────────────────────────────────────── */
+[data-cke-editorplaceholder]::before { color: rgba(240,240,255,.3) !important; }
+
+/* ── CKEditor combo panel dark theme (Font Size, Format dropdowns) ── */
+/* contentsCss is loaded into both editor content AND panel iframes,   */
+/* so these styles reach inside the panel iframe document.             */
+
+/* Panel body and container */
+body.cke_panel_container,
+html.cke_panel_container body {
+  background: #0f0f1a !important;
+  color: #f0f0ff !important;
+}
+
+/* Group title header ("Font Size") */
+.cke_panel_grouptitle {
+  background: #181825 !important;
+  background-image: none !important;
+  color: rgba(240,240,255,.6) !important;
+  border-bottom-color: rgba(255,255,255,.1) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* List items */
+.cke_panel_listItem a {
+  color: #f0f0ff !important;
+  border-color: transparent !important;
+}
+
+.cke_panel_listItem a:hover,
+.cke_panel_listItem a:focus,
+.cke_panel_listItem a:active {
+  background-color: rgba(124,58,237,.18) !important;
+  border-color: rgba(124,58,237,.3) !important;
+  box-shadow: none !important;
+}
+
+/* Selected / current item */
+.cke_panel_listItem.cke_selected a {
+  background-color: rgba(124,58,237,.25) !important;
+  border-color: rgba(124,58,237,.4) !important;
+  box-shadow: none !important;
+}

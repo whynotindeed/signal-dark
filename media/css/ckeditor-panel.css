@@ -1,0 +1,49 @@
+/**
+ * Signal Dark — CKEditor combo panel dark theme
+ * Injected into CKEditor panel iframes via config.panel_css
+ * so it overrides the moonocolor skin defaults.
+ */
+
+/* Panel container background */
+body {
+  background: #0f0f1a !important;
+  color: #f0f0ff !important;
+}
+
+/* Panel wrapper */
+.cke_panel {
+  background: #0f0f1a !important;
+  border-color: rgba(255,255,255,.1) !important;
+}
+
+/* Group title (e.g. "Font Size") */
+.cke_panel_grouptitle {
+  background: #181825 !important;
+  background-image: none !important;
+  color: rgba(240,240,255,.6) !important;
+  border-bottom-color: rgba(255,255,255,.1) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* List items */
+.cke_panel_listItem a {
+  color: #f0f0ff !important;
+  border-color: transparent !important;
+}
+
+.cke_panel_listItem a:hover,
+.cke_panel_listItem a:focus,
+.cke_panel_listItem a:active {
+  background-color: rgba(124,58,237,.18) !important;
+  border-color: rgba(124,58,237,.3) !important;
+  box-shadow: none !important;
+}
+
+/* Selected / current item */
+.cke_panel_listItem.cke_selected a {
+  background-color: rgba(124,58,237,.25) !important;
+  border-color: rgba(124,58,237,.4) !important;
+  box-shadow: none !important;
+}
