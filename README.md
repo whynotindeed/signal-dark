@@ -1,4 +1,4 @@
-# Signal Dark — Joomla Template
+# Signal Dark — Joomla 6 Template
 
 ![The AI Director](github_header.jpg)
 
