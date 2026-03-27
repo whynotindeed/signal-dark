@@ -1,11 +1,13 @@
 # Signal Dark — Joomla Template
 
+![The AI Director](github_header.jpg)
+
 A dark editorial template for Joomla 5/6. Every component view styled for dark mode — articles, categories, contacts, tags, search, news feeds, user views, and more.
 
 **[Live Demo](https://demo.theaidirector.win)** · **[Getting Started](https://demo.theaidirector.win/signal-dark/getting-started)**
 
-
 ## Features
+![The AI Director](github_header.jpg)
 
 - **Dark theme** — near-black `#0a0a0f` background, violet `#7c3aed` and cyan `#06b6d4` accents
 - **36 module positions** — hero, featured, sidebar, footer, ad slots, newsletter, marketplace, and more
@@ -17,25 +19,31 @@ A dark editorial template for Joomla 5/6. Every component view styled for dark m
 - **Custom error page** — styled 404 with navigation back to home
 - **Dark mode form controls** — inputs, selects, checkboxes all styled
 - **Joomla 6 ready** — tested on Joomla 5.4+ and 6.0+
+![The AI Director](github_header.jpg)
 
 ## Install
+![The AI Director](github_header.jpg)
 
 1. Download the [latest release](https://github.com/whynotindeed/signal-dark/releases) or clone this repo
 2. Zip the contents (or use the release zip)
 3. In Joomla admin: **Extensions → Install → Upload Package File**
 4. Go to **System → Templates → Styles** and set Signal Dark as default
+![The AI Director](github_header.jpg)
 
 Or install via CLI:
 ```bash
 # Copy files into your Joomla installation
 cp -r templates/signal-dark /path/to/joomla/templates/
 cp -r media/* /path/to/joomla/media/templates/site/signal-dark/
+![The AI Director](github_header.jpg)
 
 # Register and enable
 php cli/joomla.php extension:discover
 ```
+![The AI Director](github_header.jpg)
 
 ## Module Positions
+![The AI Director](github_header.jpg)
 
 | Position | Purpose |
 |----------|---------|
@@ -48,12 +56,16 @@ php cli/joomla.php extension:discover
 | `sidebar-left` | Left sidebar |
 | `ad-banner` / `ad-sidebar` | Ad positions |
 | `footer-a` / `footer-b` / `footer-c` | Three-column footer |
+![The AI Director](github_header.jpg)
 
 Full list: 36 positions declared in `templateDetails.xml`.
+![The AI Director](github_header.jpg)
 
 ## CSS Customization
+![The AI Director](github_header.jpg)
 
 Edit `media/css/custom.css` for overrides that survive template updates. The main styles are in `media/css/template.css` — all colors use CSS custom properties defined in `:root`.
+![The AI Director](github_header.jpg)
 
 Key variables:
 ```css
@@ -67,18 +79,25 @@ Key variables:
   --cyan:      #06b6d4;     /* secondary accent */
 }
 ```
+![The AI Director](github_header.jpg)
 
 ## Requirements
+![The AI Director](github_header.jpg)
 
 - Joomla 5.4+ or Joomla 6.0+
 - PHP 8.1+
+![The AI Director](github_header.jpg)
 
 ## License
+![The AI Director](github_header.jpg)
 
 GPL-2.0-or-later — same as Joomla itself.
+![The AI Director](github_header.jpg)
 
 ## Credits
+![The AI Director](github_header.jpg)
 
 Built by **[The AI Director](https://theaidirector.win)** — tools for building Joomla sites with AI.
+![The AI Director](github_header.jpg)
 
 The entire template — CSS, PHP, JavaScript — was written conversationally using [Claude Code](https://claude.ai/claude-code) in VS Code. Want to build your own Joomla site the same way? Check out the [AI Joomla Starter Kit](https://theaidirector.win/shop).
