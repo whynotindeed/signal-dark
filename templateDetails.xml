@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="template" client="site" method="upgrade">
 	<name>signal-dark</name>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<creationDate>2026-02</creationDate>
 	<author>The AI Director</author>
+	<license>GPL v2+</license>
+	<authorUrl>https://theaidirector.win</authorUrl>
 	<description>Signal Dark — a dark editorial template built entirely by AI — &lt;a href="https://theaidirector.win" target="_blank" rel="noopener"&gt;TheAIDirector.Win&lt;/a&gt;&lt;br&gt;&lt;br&gt;Violet/cyan accent palette. Space Grotesk typography. Reading progress bar. Full magazine layout with &lt;a href="https://theaidirector.win/index.php/signal-dark/modules" target="_blank" rel="noopener"&gt;36 module positions&lt;/a&gt;. Every component view styled for dark mode — articles, categories, contacts, tags, search, news feeds, and Kunena forum.&lt;br&gt;&lt;br&gt;Designed to be edited conversationally in &lt;a href="https://theaidirector.win/coding-tools" target="_blank" rel="noopener"&gt;VS Code with Claude Code&lt;/a&gt; — describe what you want, it reads the template, writes the CSS, and deploys the change. No manual coding required.&lt;br&gt;&lt;br&gt;&lt;a href="https://theaidirector.win/index.php/signal-dark" target="_blank" rel="noopener"&gt;Browse the demo &amp;rarr;&lt;/a&gt;</description>
+
 
 	<files>
 		<filename>component.php</filename>

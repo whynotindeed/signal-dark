@@ -12642,3 +12642,7 @@ body.mceContentBody hr.mce-item-pagebreak {
   margin: 1.5em 0 !important;
 }
 
+
+/* Fix double line between blog items — hide empty info-below dl and hr from readmore break */
+.item-content > dl.article-info:not(:first-of-type) { display: none !important; }
+.item-content > hr { display: none !important; }

@@ -18,3 +18,8 @@
  *   Hide the reading progress bar:
  *     .taid-progress { display: none; }
  */
+
+/* Hide empty article-info blocks (Joomla outputs info-below even when empty) */
+dl.article-info:not(:has(dd)) { display: none; }
+.blog-item .readmore ~ dl.article-info { display: none; }
+.blog-item dl.article-info + dl.article-info { display: none; }

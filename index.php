@@ -41,12 +41,12 @@ $this->setMetaData('twitter:description', $ogDesc);
 $this->setMetaData('twitter:image',       $ogImage);
 
 $siteName      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$logoText      = (string) $this->params->get('logoText', 'My <span>Joomla</span> Site');
+$logoText      = (string) $this->params->get('logoText', 'THE <span>AI</span> DIRECTOR');
 $siteTagline   = htmlspecialchars((string) $this->params->get('siteTagline',   'AI · Prompts · Automation'), ENT_QUOTES, 'UTF-8');
 $heroTitle     = htmlspecialchars((string) $this->params->get('heroTitle',     'Think Clearly About AI.'), ENT_QUOTES, 'UTF-8');
 $heroSubtitle  = htmlspecialchars((string) $this->params->get('heroSubtitle',  'Deep analysis, practical prompts, and working scripts for people who want to actually use AI — not just talk about it.'), ENT_QUOTES, 'UTF-8');
 $ctaText       = htmlspecialchars((string) $this->params->get('ctaText',       'Read Articles'), ENT_QUOTES, 'UTF-8');
-$ctaLink       = htmlspecialchars((string) $this->params->get('ctaLink',       '#articles'), ENT_QUOTES, 'UTF-8');
+$ctaLink       = htmlspecialchars((string) $this->params->get('ctaLink',       '#latest'), ENT_QUOTES, 'UTF-8');
 $secCtaText    = htmlspecialchars((string) $this->params->get('secondaryCtaText', 'Browse Scripts'), ENT_QUOTES, 'UTF-8');
 $secCtaLink    = htmlspecialchars((string) $this->params->get('secondaryCtaLink', '#marketplace'), ENT_QUOTES, 'UTF-8');
 $showHero        = (int) $this->params->get('showHero', 1) === 1;
@@ -54,7 +54,7 @@ $showTagline     = (int) $this->params->get('showHeroTagline', 1) === 1;
 $showTitle       = (int) $this->params->get('showHeroTitle', 1) === 1;
 $showSubtitle    = (int) $this->params->get('showHeroSubtitle', 1) === 1;
 $showCta         = (int) $this->params->get('showHeroCta', 1) === 1;
-$showSecCta      = (int) $this->params->get('showHeroSecondaryCta', 0) === 1;
+$showSecCta      = (int) $this->params->get('showHeroSecondaryCta', 1) === 1;
 $showStats       = (int) $this->params->get('showHeroStats', 1) === 1;
 $heroImage       = (string) $this->params->get('heroImage', '');
 $heroHeight      = (string) $this->params->get('heroHeight', 'auto');
@@ -65,7 +65,7 @@ $heroOverlay     = (string) $this->params->get('heroOverlayOpacity', '70');
 $showProgress    = (int) $this->params->get('showProgressBar', 1) === 1;
 $stickyHeader    = (int) $this->params->get('stickyHeader', 1) === 1;
 $stickySubnav    = (int) $this->params->get('stickySubnav', 1) === 1;
-$showNavCta      = (int) $this->params->get('showNavCta', 0) === 1;
+$showNavCta      = (int) $this->params->get('showNavCta', 1) === 1;
 $showNavSearch   = (int) $this->params->get('showNavSearch', 1) === 1;
 $kunenaCompact   = (int) $this->params->get('kunenaShowLastPost', 0) === 0;
 $kunenaHidePost  = (int) $this->params->get('kunenaShowPostHeader', 1) === 0;
@@ -207,8 +207,8 @@ switch ($this->params->get('fontService', 'google')) {
         break;
 }
 $this->addStyleSheet(Uri::root(true) . '/media/system/css/joomla-fontawesome.min.css');
-$this->addStyleSheet(Uri::root(true) . '/media/templates/site/signal-dark/css/template.css?v=20260306au');
-$this->addStyleSheet(Uri::root(true) . '/media/templates/site/signal-dark/css/custom.css?v=20260302w');
+$this->addStyleSheet(Uri::root(true) . '/media/templates/site/signal-dark/css/template.css?v=20260331b');
+$this->addStyleSheet(Uri::root(true) . '/media/templates/site/signal-dark/css/custom.css?v=20260331a');
 $this->addScript(Uri::root(true) . '/media/templates/site/signal-dark/js/template.js?v=20260306j', [], ['defer' => true]);
 ?>
 <!DOCTYPE html>
@@ -388,8 +388,8 @@ $this->addScript(Uri::root(true) . '/media/templates/site/signal-dark/js/templat
                         <span class="taid-stat-label">Topic categories</span>
                     </div>
                     <div class="taid-stat">
-                        <span class="taid-stat-value">Free</span>
-                        <span class="taid-stat-label">No paywall, ever</span>
+                        <span class="taid-stat-value">3</span>
+                        <span class="taid-stat-label">Products for AI</span>
                     </div>
                 </div>
             <?php endif; ?>
@@ -665,7 +665,7 @@ $this->addScript(Uri::root(true) . '/media/templates/site/signal-dark/js/templat
                 <?php if ($hasFooterCredit) : ?>
                     <jdoc:include type="modules" name="footer-credit" style="none" />
                 <?php else : ?>
-                    <p class="taid-footer-powered">Powered by <a href="https://www.joomla.org" target="_blank" rel="noopener noreferrer">Joomla</a> &amp; <a href="https://demo.theaidirector.win/signal-dark/getting-started" target="_blank" rel="noopener noreferrer">Signal Dark</a></p>
+                    <p class="taid-footer-powered">Powered by <a href="https://www.joomla.org" target="_blank" rel="noopener noreferrer">Joomla</a> &amp; <a href="https://theaidirector.win" target="_blank" rel="noopener noreferrer">Signal Dark</a></p>
                 <?php endif; ?>
             </div>
         </div>
